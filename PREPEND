@@ -1,3 +1,6 @@
+//The prepend() method adds a new node with the specified value to the beginning of the linked list
+
+
 public void prepend(int value) {
     // create a new node with the specified value
     Node newNode = new Node(value);
