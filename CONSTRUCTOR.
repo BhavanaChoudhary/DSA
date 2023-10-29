@@ -1,4 +1,7 @@
 // ***** CONSTRUCTOR METHOD FOR SINGLY LINKED LIST *****
+//Overall, this code sets up the basic structure of a linked list and initializes it with a single node (which can be removed later).   This node will be assigned the given value.  Other methods can be added to this class to perform operations on the linked list, such as inserting, removing, and searching for nodes.
+
+
 
 
 public class LinkedList {
