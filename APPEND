@@ -1,3 +1,7 @@
+//The append method adds a new node to the end of the linked list with the given value.
+
+
+
 public void append(int value) {
     // Create a new node with the given value
     Node newNode = new Node(value);
