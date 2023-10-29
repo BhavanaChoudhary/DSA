@@ -1,3 +1,8 @@
+//The removeFirst() method removes the first node from the linked list and returns it.
+
+
+
+
 public Node removeFirst() {
     // if the length of the linked list is 0, return null
     if (length == 0) return null;
