@@ -1,3 +1,6 @@
+//The removeLast() method removes the last node of the linked list and returns it.
+
+
 public Node removeLast() {
     // if the length of the linked list is 0, return null
     if (length == 0) return null;
