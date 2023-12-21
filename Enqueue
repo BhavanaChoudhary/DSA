@@ -1,0 +1,22 @@
+public void enqueue(int value) {
+    // Create a new node with the given value
+    Node newNode = new Node(value);
+    
+    // If the queue is empty, set the new node to be both the first and last element
+    if (length == 0) {
+        first = newNode;
+        last = newNode;
+    } 
+    
+    // Otherwise, add the new node to the end of the queue
+    else {
+        // Set the next pointer of the current last node to the new node
+        last.next = newNode;
+        
+        // Update the last pointer to point to the new node
+        last = newNode;
+    }
+    
+    // Increment the length of the queue to reflect the addition of the new element
+    length++;
+}
