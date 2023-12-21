@@ -1,0 +1,32 @@
+// Declare instance variables for the Queue class
+    private Node first;
+    // Pointer to the first node in the queue
+    private Node last;
+    // Pointer to the last node in the queue
+    private int length;
+    // Number of nodes in the queue
+ 
+    // Define a nested class called Node to represent a single node in the queue
+    class Node {
+        int value;
+        // Value stored in the node
+        Node next;
+        // Pointer to the next node in the queue
+ 
+        Node(int value) {
+            this.value = value;
+        }
+    }
+ 
+    // Define a constructor for the Queue class, 
+    // which initializes the queue with a single value
+    public Queue(int value) {
+        Node newNode = new Node(value);
+        // Create a new node with the specified value
+        first = newNode;
+        // Set both the head and tail to the new node since 
+        // it is the only node in the queue
+        last = newNode;
+        // The length of the queue is 1, since there is only one node
+        length = 1;
+    }
