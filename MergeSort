@@ -1,0 +1,43 @@
+public static int[] merge(int[] array1, int[] array2) {
+    // Create a new combined array with a size equal to the sum 
+    // of the lengths of the input arrays
+    int[] combined = new int[array1.length + array2.length];
+    
+    // Initialize index, i, and j to keep track of positions 
+    // in combined, array1, and array2 respectively
+    int index = 0;
+    int i = 0;
+    int j = 0;
+    
+    // Merge elements from both arrays until one of them reaches its end
+    while (i < array1.length && j < array2.length) {
+        // If the current element in array1 is smaller, add it to the combined array
+        if (array1[i] < array2[j]) {
+            combined[index] = array1[i];
+            index++;
+            i++;
+        } else {
+            // Otherwise, add the current element from array2 to the combined array
+            combined[index] = array2[j];
+            index++;
+            j++;
+        }
+    }
+    
+    // If there are remaining elements in array1, add them to the combined array
+    while (i < array1.length) {
+        combined[index] = array1[i];
+        index++;
+        i++;
+    }
+    
+    // If there are remaining elements in array2, add them to the combined array
+    while (j < array2.length) {
+        combined[index] = array2[j];
+        index++;
+        j++;
+    }
+    
+    // Return the final merged and sorted combined array
+    return combined;
+}
