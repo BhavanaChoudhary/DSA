@@ -1,0 +1,52 @@
+public class QuickSort {
+    public static void swap(int array[],int firstIndex,int secondIndex){
+        int temp=array[firstIndex];
+        array[firstIndex]=array[secondIndex];
+        array[secondIndex]=temp;
+    }
+    public static int pivot(int array[],int pivotIndex,int endIndex){
+        int swapIndex=pivotIndex;
+        for(int i=pivotIndex+1;i<=endIndex;i++){
+            if(array[i]<array[pivotIndex]){
+                swapIndex++;
+                swap(array,swapIndex,i);
+
+            }
+        }
+        swap(array ,pivotIndex, swapIndex);
+        return swapIndex;
+    }
+    public static void quicksorthelper(int array[],int left,int right){
+        if(left<right) {
+            int pivotIndex = pivot(array, left, right);
+            quicksorthelper(array, left, pivotIndex - 1);
+            quicksorthelper(array, pivotIndex + 1, right);
+        }
+    }
+    public static void quicksort(int array[]){
+        quicksorthelper(array,0, array.length-1);
+    }
+}
+
+
+
+
+
+///////////////////////////////////
+
+
+
+
+
+
+
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        QuickSort qs=new QuickSort();
+         int MyArray[]={2,1,3,4,6,7,8};
+         qs.quicksort(MyArray);
+         System.out.println(Arrays.toString(MyArray));
+        }
+    }
