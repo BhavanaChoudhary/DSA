@@ -1,0 +1,22 @@
+public ArrayList keys() {
+    // Create a new ArrayList to hold the keys
+    ArrayList<String> allKeys = new ArrayList<>();
+ 
+    // Loop through all the indices in the dataMap array
+    for (int i = 0; i < dataMap.length; i++) {
+        // Get the head node of the linked list at the current index
+        Node temp = dataMap[i];
+ 
+        // Loop through the linked list at the current index
+        while (temp != null) {
+            // Add the key of the current node to the allKeys ArrayList
+            allKeys.add(temp.key);
+ 
+            // Move to the next node in the linked list
+            temp = temp.next;
+        }
+    }
+ 
+    // Return the ArrayList containing all the keys
+    return allKeys;
+}
