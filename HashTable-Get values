@@ -1,0 +1,15 @@
+public int get(String key) {
+    // Compute the hash code for the given key.
+    int index = hash(key);
+    // Get the head node of the linked list at the computed hash code index.
+    Node temp = dataMap[index];
+    // Traverse the linked list to find the node with the given key.
+    while (temp != null) {
+        // If we find a node with the given key, return its value.
+        if (temp.key == key) return temp.value;
+        // Move on to the next node in the linked list.
+        temp = temp.next;
+    }
+    // If the key is not found, return 0.
+    return 0;
+}
