@@ -1,0 +1,33 @@
+public void set(String key, int value) {
+    // Get the index of the node based on the key
+    int index = hash(key);
+ 
+    // Create a new node with the given key and value
+    Node newNode = new Node(key, value);
+ 
+    // If the data map at the index is null, add the new node
+    if (dataMap[index] == null) {
+        dataMap[index] = newNode;
+    } else {
+        // If there is already a node at the index, traverse the linked list
+        Node temp = dataMap[index];
+ 
+        // If the first node's key matches the given key, update its value
+        if (temp.key == key) {
+            temp.value += value;
+            return;
+        }
+ 
+        // Traverse the linked list until the end or a node with a matching key is found
+        while (temp.next != null) {
+            temp = temp.next;
+            if (temp.key == key) {
+                temp.value += value;
+                return;
+            }
+        }
+ 
+        // Add the new node to the end of the linked list
+        temp.next = newNode;
+    }
+}
