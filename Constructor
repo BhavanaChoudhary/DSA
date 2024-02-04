@@ -1,0 +1,27 @@
+
+public class BinarySearchTree {
+ 
+    // The root node of the binary search tree
+    private Node root;
+ 
+    // The Node class represents a node in the binary search tree
+    class Node {
+        // The value stored in the node
+        public int value;
+        // The left subtree of the node
+        public Node left;
+        // The right subtree of the node
+        public Node right;
+ 
+        // Constructor that takes an int value and sets the value of the node
+        Node(int value) {
+            this.value = value;
+        }
+    }
+    
+    // Get the root node of the binary search tree
+    public Node getRoot() {
+        return root;
+    }
+ 
+}
