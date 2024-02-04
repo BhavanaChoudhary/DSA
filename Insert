@@ -1,0 +1,45 @@
+public boolean insert(int value) {
+    // Create a new node with the given value
+    Node newNode = new Node(value);
+ 
+    // If the tree is empty...
+    if (root == null) {
+        // Set the root to be the new node
+        root = newNode;
+        // Return true to indicate that the insertion was successful
+        return true;
+    }
+ 
+    // Set temp to be the root node
+    Node temp = root;
+ 
+    // Loop until the new node is successfully inserted or determined to be a duplicate
+    while (true) {
+        // If the new node's value is equal to the current node's value, return false to indicate that the insertion failed
+        if (newNode.value == temp.value)
+            return false;
+ 
+        // If the new node's value is less than the current node's value...
+        if (newNode.value < temp.value) {
+            // If the current node does not have a left child...
+            if (temp.left == null) {
+                // Set the left child of the current node to be the new node
+                temp.left = newNode;
+                // Return true to indicate that the insertion was successful
+                return true;
+            }
+            // Otherwise, set temp to be the left child of the current node and continue looping
+            temp = temp.left;
+        } else {
+            // If the current node does not have a right child...
+            if (temp.right == null) {
+                // Set the right child of the current node to be the new node
+                temp.right = newNode;
+                // Return true to indicate that the insertion was successful
+                return true;
+            }
+            // Otherwise, set temp to be the right child of the current node and continue looping
+            temp = temp.right;
+        }
+    }
+}
