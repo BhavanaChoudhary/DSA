@@ -1,0 +1,76 @@
+import java.util.*;
+public class ArrayOperations {
+    static Scanner sc=new Scanner(System.in);
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        int n=arr.length;
+
+
+        // Array Traversal
+        arrayTraversal(arr,n);
+
+
+        // Insertion at any given position
+        int newarr[]=arrayInsertion(arr,n);
+
+
+        //to delete an element
+        deleteElement(newarr,n+1);
+    }
+    public static void arrayTraversal(int arr[],int n){
+        System.out.print("The elements of the array are:\n");
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+ "\t");
+        }
+        System.out.println();
+    }
+    public static int[] arrayInsertion(int arr[],int n){
+        System.out.println("enter the index and the element u want to insert");
+        int pos ,x;
+        pos=sc.nextInt();
+        x=sc.nextInt();
+        // new array with increased size
+        int newarr[]=new int[n+1];
+        for(int i=0;i<pos;i++){
+            newarr[i]=arr[i];
+        }
+        newarr[pos]=x;
+        for(int i=pos;i<n;i++){
+            newarr[i+1]=arr[i];
+        }
+        System.out.println("elements after insertion");
+        for(int i=0;i<n+1;i++){
+            System.out.print(newarr[i]+ "\t");
+        }
+        System.out.println();
+        return newarr;
+    }
+
+    public static void deleteElement(int arr[],int n){
+        System.out.println("enter the element to be deleted");
+        int ele=sc.nextInt();
+        int pos = findPosition(arr,n,ele);
+       if(pos==-1) {
+           System.out.println("element not found");
+           return;
+       }
+        for(int i=pos;i<n-1;i++){
+            arr[i]=arr[i+1];
+        }
+        System.out.println("array elements after performing deletion");
+        for (int i=0;i<n-1;i++){
+            System.out.print(arr[i] + "\t");
+        }
+        System.out.println();
+    }
+    public static int findPosition(int arr[],int n,int ele){
+        for(int i=0;i<n;i++){
+            if(arr[i]==ele)
+                return i;
+        }
+        return -1;
+    }
+
+
+
+}
